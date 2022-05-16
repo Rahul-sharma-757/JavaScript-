@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>JS Calculator</title>
+</head>
+<style>
+   .btn-light{transition: 0.3s; box-shadow: 7px 7px 3px 1px rgba(255, 255, 255, 0.342);}
+   .btn-light:hover{transform: scale(1.2) !important; transition: 0.3s;}
+</style>
+<body>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 bg-dark p-5">
+               <form name="calculator" id="calculator">
+                   <input id="calc" type="text" name="answer" class="form-control">
+                   <div class="row mt-4">
+                       <div class="col"><input type="button" class="form-control btn btn-light" role="button" name="one" id="one" value="1" onclick="first()"></div>
+                       <div class="col"><input type="button" name="two" role="button" class="form-control btn btn-light" value="2" id="two" onclick="second()"></div>
+                       <div class="col"><input type="button" name="three" role="button" class="form-control btn btn-light" value="3" id="three" onclick="third()"></div>
+                       <div class="col"><input type="button" name="clear" role="button" class="form-control btn btn-light" value="AC" id="clear" onclick="AC()"></div>
+                   </div>
+                   <div class="row mt-4">
+                       <div class="col"><input type="button" class="form-control btn btn-light" role="button" name="four" id="four" value="4" onclick="fours()"></div>
+                       <div class="col"><input type="button" name="five" role="button" class="form-control btn btn-light" value="5" id="five" onclick="fives()"></div>
+                       <div class="col"><input type="button" name="six" role="button" class="form-control btn btn-light" value="6" id="six" onclick="sixs()"></div>
+                       <div class="col"><input type="button" name="back" role="button" class="form-control btn btn-light" value="<--" id="back" onclick="rulers()"></div>
+                   </div>
+                   <div class="row mt-4">
+                       <div class="col"><input type="button" class="form-control btn btn-light" role="button" name="seven" id="seven" value="7" onclick="sevens()"></div>
+                       <div class="col"><input type="button" name="eight" role="button" class="form-control btn btn-light" value="8" id="eight" onclick="eights()"></div>
+                       <div class="col"><input type="button" name="nine" role="button" class="form-control btn btn-light" value="9" id="nine" onclick="nines()"></div>
+                       <div class="col"><input type="button" class="form-control btn btn-light" role="button" name="plus" id="plus" value="+" onclick="pluss()"></div>
+                   </div>
+                   <div class="row mt-4">
+                       <div class="col"><input type="button" class="form-control btn btn-light" role="button" name="multi" id="multi" value="x" onclick="multis()"></div>
+                       <div class="col"><input type="button" name="zero" role="button" class="form-control btn btn-light" value="0" id="zero" onclick="zeros()"></div>
+                       <div class="col"><input type="button" name="division" role="button" class="form-control btn btn-light" value="/" id="division" onclick="divis()"></div>
+                       <div class="col"><input type="button" name="minus" role="button" class="form-control btn btn-light" value="-" id="minus" onclick="minuss()"></div>
+                   </div>
+                   <div class="row mt-4"> 
+                      <div class="col"><input type="button" name="modulus" role="button" class="form-control btn btn-light" value="%" id="modulus" onclick="moduled()"></div>
+                       <div class="col"><input type="button" class="form-control btn btn-light" role="button" name="dot" id="dot" value="." onclick="dotes()"></div>
+                       <div class="col"><input type="button" name="pi" role="button" class="form-control btn btn-light" value="PI" id="pi" onclick="addPi()"></div>
+                       <div class="col"><input type="button" name="x2" role="button" class="form-control btn btn-light" value="x^2" id="x2" onclick="$x2()"></div>
+                   </div>
+                   <div class="row mt-4">
+                      <div class="col"><input type="button" name="sqrt" role="button" class="form-control btn btn-light" value="squareroot" id="sqrt" onclick="square()"></div>
+                      <div class="col"><input type="button" name="e" id="ee" class="form-control btn btn-light" role="button" value="e" onclick="eee()"></div>
+                      <div class="col"><input type="button" name="x2" role="button" class="form-control btn btn-light" value="x^2" id="x2" onclick="$x2()"></div>
+                      <div class="col"><input type="button" name="x4" role="button" class="form-control btn btn-light" value="x^4" id="x4" onclick="$x4()"></div>
+                   </div>
+                   <div class="row mt-4">
+                     <div class="col"></div>
+                     <div class="col"></div>
+                     <div class="col-md-4"><input type="button" name="equal" role="button" class="form-control btn btn-light" value="=" id="equal" onclick="equals()"></div>
+                   </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+   {
+       function first() {
+           calculator.calc.value += '1';}
+       function second() {
+           calculator.calc.value += '2';}
+        function third() {
+           calculator.calc.value += '3';}
+        function fours() {
+           calculator.calc.value += '4';}
+        function fives() {
+           calculator.calc.value += '5';}
+        function sixs() {
+           calculator.calc.value += '6';}
+        function sevens() {
+           calculator.calc.value += '7';}
+        function eights() {
+           calculator.calc.value += '8';}
+        function nines() {
+           calculator.calc.value += '9';}
+        function zeros() {
+           calculator.calc.value += '0';}
+        function multis() {
+           calculator.calc.value += '*';}
+        function divis() {
+           calculator.calc.value += '/';}
+        function pluss() {
+           calculator.calc.value += '+';}
+        function minuss() {
+           calculator.calc.value += '-';}
+        function moduled() {
+           calculator.calc.value += '%';}
+        function zeros() {
+           calculator.calc.value += '0';}
+        function AC() {
+           calculator.calc.value = '';}
+        function equals() {
+           calculator.calc.value = parseFloat(eval(calculator.answer.value)).toFixed(2);
+        }
+        function dotes() {
+           calculator.calc.value += '.';
+        }
+        function rulers() {
+           calculator.calc.value = calculator.answer.value.substring(0, calculator.answer.value.length - 1);
+        }
+        function addPi() {
+           calculator.calc.value = parseFloat(Math.PI).toFixed(2);
+        }
+        function square() {
+           calculator.calc.value = Math.sqrt(calculator.answer.value).toFixed(2);
+        }function eee() {
+           calculator.calc.value = calculator.answer.value + 'e';
+        }
+        function $x2() {
+           calculator.calc.value = Math.pow(calculator.answer.value, 2);
+        }
+        function $x4() {
+           calculator.calc.value = Math.pow(calculator.answer.value, 4); 
+        }
+   }
+</script>
+</html>

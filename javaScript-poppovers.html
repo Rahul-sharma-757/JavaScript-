@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tooltip" style="position: absolute;top: 30px;"></div>
+<div class="vis-m position-absolute">
+    <div class="tooltip-wrapper">
+        <div class="tooltip-outer">
+            <span class="tooltip-inner-content">
+                <div class="tooltip-title"></div>
+                <div class="tooltip-body"></div>
+            </span>
+        </div>
+    </div>
+</div>
+<a type="button" class="icon-num btn btn-danger rounded-circle popupover text-black" name="tooltip-link" data-title="1. WiFi Antennas" style="background:#7B62F2!important; border-color: #7B62F2;">1</a>
+</body>
+<script>
+    var activeNum = 0;
+
+$("body").on('click', ".icon-num", function () {
+
+    if (activeNum != $(this).html()) {
+        $('.tooltip-wrapper').show();
+    } else {
+        $('.tooltip-wrapper').toggle();
+    }
+
+    activeNum = $(this).html();
+
+    $('.tooltip-title-t').html($(this).attr("data-title"));
+    $('.tooltip-body-t').html($(this).attr("data-body"));
+
+});
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Disabled Copy Paste</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis totam, similique porro est tenetur perspiciatis. Aliquid dolor consequuntur quasi, nemo accusamus ut, rem, reprehenderit veritatis architecto quos libero ducimus dicta.</p>
+</body>
+<script>
+    function killCopy(e){
+  return false
+  }
+  function reEnable(){
+  return true
+  }
+  document.onselectstart=new Function ("return false")
+  if (window.sidebar){
+  document.onmousedown=killCopy
+  document.onclick=reEnable
+  }
+</script>
+</html>

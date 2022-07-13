@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date object</title>
+</head>
+<body onload="getdate()">
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+    <p id="dateobj1">Click the below button to get date and time</p>
+    <script>
+        function getdate() {
+            let d = new Date();
+            document.getElementById('dateobj1').innerHTML = d.toLocaleDateString() + "<br>" +  d.toLocaleTimeString('en-US', {Minute:"numeric", Minute60: true});
+            setInterval(getdate, 1000);
+        }getdate();
+    </script>
+</body>
+</html>
